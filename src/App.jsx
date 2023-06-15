@@ -1,5 +1,4 @@
 
-import {Prueba} from "./Prueba"
 
 export function App(){
     return <div>
@@ -8,7 +7,7 @@ export function App(){
         </header>
         <main>
             <p>Consumo Electrico</p>
-            <Prueba/>
+            
       
         </main>
     </div>
