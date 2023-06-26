@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-export function Prueba() {
+export function Medidor_Agua() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    const eventSource = new EventSource('http://162.212.152.155:8000/modbusid');
+    const eventSource = new EventSource('http://162.212.152.155:8000/medidor_agua');
 
     eventSource.onmessage = (event) => {
       const newData = JSON.parse(event.data);
@@ -17,12 +17,12 @@ export function Prueba() {
   }, []);
 
   if (data === null) {
-    return <div>Cargando...</div>;
+    return <div>Cargando Datos de agua...</div>;
   }
 
   return (
     <div>
-      <div> {data.voltaje}  {data.potencia} {data.corriente} {data.factor_potencia} {data.frecuencia} {data.energia_consumida}</div>
+      <div> {data.medidor}  {data.mes} {data.anyo} {data.hora} {data.dia} </div>
       
     </div>
   );

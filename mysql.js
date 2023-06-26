@@ -4,7 +4,8 @@ const fs = require('fs');
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '123456789',
+  password: '',
+  port: '3306',
   database: 'modbus',
 });
 
