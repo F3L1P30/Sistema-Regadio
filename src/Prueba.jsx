@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-
+import { Table } from 'react-bootstrap';
+import './css/medidor.css';
 export function Prueba() {
   const [data, setData] = useState(null);
 
@@ -17,13 +18,41 @@ export function Prueba() {
   }, []);
 
   if (data === null) {
-    return <div>Cargando...</div>;
+    return (
+      <div className="loading-container">
+        <div className="loading-dots">
+          <div className="loading-dot"></div>
+          <div className="loading-dot"></div>
+          <div className="loading-dot"></div>
+        </div>
+      </div>
+    );
   }
 
   return (
     <div>
-      <div> {data.voltaje}  {data.potencia} {data.corriente} {data.factor_potencia} {data.frecuencia} {data.energia_consumida}</div>
-      
+      <Table striped bordered>
+        <thead>
+          <tr>
+            <th>Voltaje</th>
+            <th>Potencia</th>
+            <th>Corriente</th>
+            <th>Factor de Potencia</th>
+            <th>Frecuencia</th>
+            <th>Energía Consumida</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{data.voltaje}</td>
+            <td>{data.potencia}</td>
+            <td>{data.corriente}</td>
+            <td>{data.factor_potencia}</td>
+            <td>{data.frecuencia}</td>
+            <td>{data.energia_consumida}</td>
+          </tr>
+        </tbody>
+      </Table>
     </div>
   );
 }

@@ -1,19 +1,27 @@
-
-//import { NavBare } from './NavBare';
 import NavBare from './NavBare';
+import Footer from './Footer';
+import './css/index.css';
+// import { Table } from 'react-bootstrap';
+import { MedidorAgua } from './Medidor_Agua';
 
 function Consumo_Agua() {
   return (
-    <main>
-        <NavBare></NavBare>
-      <div className="container text-center ">
-        <div className="row justify-content-center">
-            <h1>Consumo de Agua</h1>
-            
+    <div className="wrapper">
+      <header>
+        <NavBare className="navbar-footer" />
+      </header>
+      <main className="content">
+        <div className="container text-center">
+          <div className="row justify-content-center">
+            <h1 className="title">Consumo de Agua</h1>
+            <MedidorAgua />
+          </div>
         </div>
-      </div>
-
-    </main>
+      </main>
+      <footer>
+        <Footer />
+      </footer>
+    </div>
   );
 }
 

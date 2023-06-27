@@ -1,0 +1,33 @@
+.loading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px; /* Ajusta la altura según tus necesidades */
+  }
+  
+  .loading-dots {
+    display: flex;
+    align-items: center;
+  }
+  
+  .loading-dot {
+    background-color: #000;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    animation: loading 1s infinite;
+  }
+  
+  @keyframes loading {
+    0% {
+      opacity: 0.2;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.2;
+    }
+  }
+  

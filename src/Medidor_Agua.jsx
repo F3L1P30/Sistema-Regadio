@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-
-export function Medidor_Agua() {
+import { Table } from 'react-bootstrap';
+import './css/medidor.css';
+export function MedidorAgua() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -17,13 +18,39 @@ export function Medidor_Agua() {
   }, []);
 
   if (data === null) {
-    return <div>Cargando Datos de agua...</div>;
+    return (
+      <div className="loading-container">
+        <div className="loading-dots">
+          <div className="loading-dot"></div>
+          <div className="loading-dot"></div>
+          <div className="loading-dot"></div>
+        </div>
+      </div>
+    );
   }
 
   return (
     <div>
-      <div> {data.medidor}  {data.mes} {data.anyo} {data.hora} {data.dia} </div>
-      
+      <Table striped bordered>
+        <thead>
+          <tr>
+            <th>Medidor</th>
+            <th>Mes</th>
+            <th>Año</th>
+            <th>Hora</th>
+            <th>Día</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{data.medidor}</td>
+            <td>{data.mes}</td>
+            <td>{data.anyo}</td>
+            <td>{data.hora}</td>
+            <td>{data.dia}</td>
+          </tr>
+        </tbody>
+      </Table>
     </div>
   );
 }
