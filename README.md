@@ -9,7 +9,7 @@ Un sistema de regadío es una instalación técnica cuya principal función es g
 ## Instrucciones de uso
 
 -Para iniciar proyecto:
-    -Instalar dependencias de ser necesario utilizando el comando "npm i". (Es posible que no se instalen todas las dependencias)
+    -Instalar dependencias de ser necesario utilizando el comando "npm i". (De todas formas las dependencias en el proyecto deberian venir todas instaladas).
     -Iniciar Api.js utilizando el comando "node Api.js"
     -Inicializar proyecto utilizando el comando "npm run start"
 
