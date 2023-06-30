@@ -18,10 +18,10 @@ function Navbare() {
               <NavLink exact to="/" className="nav-link" activeClassName="active">
                 Inicio
               </NavLink>
-              <NavLink to="/acerca" className="nav-link" activeClassName="active">
+              <NavLink to="/Acerca" className="nav-link" activeClassName="active">
                 Acerca de nosotros
               </NavLink>
-              <NavLink to="/contacto" className="nav-link letra" activeClassName="active">
+              <NavLink to="/Contacto" className="nav-link letra" activeClassName="active">
                 Contacto
               </NavLink>
               <NavLink to="/Consumo_Electrico" className="nav-link letra" activeClassName="active">

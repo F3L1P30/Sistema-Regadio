@@ -4,6 +4,8 @@ import { Routes, Route } from 'react-router-dom';
 import Inicio from './Inicio';
 import ConsumoAgua from './Consumo_Agua';
 import ConsumoElectrico from './Consumo_Electrico';
+import Acerca from './Acerca';
+import Contacto from './Contacto';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Route path="/" element={<Inicio />} />
         <Route path="/Consumo_Agua" element={<ConsumoAgua />} />
         <Route path="/Consumo_Electrico" element={<ConsumoElectrico />} />
+        <Route path="/Acerca" element={<Acerca />} />
+        <Route path="/Contacto" element={<Contacto />} />
       </Routes>
     </>
   );
