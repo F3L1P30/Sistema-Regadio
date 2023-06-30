@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import './css/medidor.css';
+import Graficos from './Graficos';
+
 export function Prueba() {
   const [data, setData] = useState(null);
+  const datosHistoricosRef = useRef([]);
 
   useEffect(() => {
     const eventSource = new EventSource('http://162.212.152.155:8000/modbusid');
@@ -10,6 +13,11 @@ export function Prueba() {
     eventSource.onmessage = (event) => {
       const newData = JSON.parse(event.data);
       setData(newData);
+
+      datosHistoricosRef.current = [
+        { voltaje: newData.voltaje, potencia: newData.potencia },
+        ...datosHistoricosRef.current.slice(0, 9),
+      ];
     };
 
     return () => {
@@ -31,6 +39,8 @@ export function Prueba() {
 
   return (
     <div>
+      
+
       <Table striped bordered>
         <thead>
           <tr>
@@ -44,15 +54,40 @@ export function Prueba() {
         </thead>
         <tbody>
           <tr>
-            <td>{data.voltaje}</td>
-            <td>{data.potencia}</td>
-            <td>{data.corriente}</td>
+            <td>{data.voltaje} [Volt]</td>
+            <td>{data.potencia} [W]</td>
+            <td>{data.corriente}[A]</td>
             <td>{data.factor_potencia}</td>
-            <td>{data.frecuencia}</td>
-            <td>{data.energia_consumida}</td>
+            <td>{data.frecuencia}[Hz]</td>
+            <td>{data.energia_consumida}[Kwh]</td>
           </tr>
         </tbody>
       </Table>
+      <div className="d-flex">
+        <div style={{ width: "450px", height: "230px", marginRight: "20px"}}>
+          <Graficos datosHistoricos={datosHistoricosRef.current} />
+        </div>
+        <div>
+          <h2>Registro Últimos Datos</h2>
+          <Table striped bordered>
+            <thead>
+              <tr>
+                <th>Voltaje</th>
+                <th>Potencia</th>
+              </tr>
+            </thead>
+            <tbody>
+              {datosHistoricosRef.current.map((dato, index) => (
+                <tr key={index}>
+                  <td>{dato.voltaje}</td>
+                  <td>{dato.potencia}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </div>
+      </div>
+
     </div>
   );
 }

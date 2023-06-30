@@ -37,13 +37,13 @@ export function MedidorAgua() {
             <th>Medidor</th>
             <th>Mes</th>
             <th>Año</th>
-            <th>Hora</th>
+            <th>Hora UTC</th>
             <th>Día</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>{data.medidor}</td>
+            <td>{data.medidor} [m3]</td>
             <td>{data.mes}</td>
             <td>{data.anyo}</td>
             <td>{data.hora}</td>
