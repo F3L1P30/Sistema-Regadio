@@ -1,7 +1,7 @@
 .navbar-custom {
     background-color: #333333;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px #007bff;
   }
   
   .navbar-custom .nav-link {
@@ -12,11 +12,10 @@
   }
   
   .navbar-custom .nav-link.active {
-    color: #007bff;
+    color: #0298de !important;
   }
   
   
   .navbar-custom .nav-link:hover {
-    color: #007bff;
+    color: #0298de;
   }
-  

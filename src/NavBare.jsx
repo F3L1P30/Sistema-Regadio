@@ -30,6 +30,9 @@ function Navbare() {
               <NavLink to="/Consumo_Agua" className="nav-link letra" activeClassName="active">
                 Consumo de agua
               </NavLink>
+              <NavLink to="/Historicos" className="nav-link letra" activeClassName="active">
+                Datos Historicos
+              </NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>
