@@ -4,8 +4,8 @@
 .title {
   font-size: 3rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  color: rgb(39, 16, 171);
-  /* Agrega otros estilos adicionales según tus preferencias */
+  color: #0277de;
+  -webkit-text-stroke: 1px black;
 }
 
 .wrapper {

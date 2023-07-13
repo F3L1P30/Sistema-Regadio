@@ -6,6 +6,7 @@ import ConsumoAgua from './Consumo_Agua';
 import ConsumoElectrico from './Consumo_Electrico';
 import Acerca from './Acerca';
 import Contacto from './Contacto';
+import Historicos from './Historicos';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/Consumo_Electrico" element={<ConsumoElectrico />} />
         <Route path="/Acerca" element={<Acerca />} />
         <Route path="/Contacto" element={<Contacto />} />
+        <Route path="/Historicos" element={<Historicos />} />
       </Routes>
     </>
   );
